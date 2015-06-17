@@ -16,10 +16,10 @@ var $ = function( selector ) {
 
   function deeperMatch(){
     match = []
-    match.push(finders.ID.exec(selector))
-    match.push(finders.CLASS.exec(selector))
+    match.push(finders.ID.exec(selector));
+    match.push(finders.CLASS.exec(selector));
     match.push(finders.TAG.exec(selector));
-    return match
+    return match;
   }
 
   if ( match = regEx.exec( selector ))  {
@@ -35,7 +35,7 @@ var $ = function( selector ) {
     var tags = document.getElementsByTagName(match[2][1]);
     for(i = 0; i < tags.length; i++){
       if(tags[i].id){  
-        results.push(tags[i])
+        results.push(tags[i]);
         return results;
       }
     }
