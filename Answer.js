@@ -5,7 +5,7 @@ var $ = function( selector ) {
   ////////////////////
 
   var regEx = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/;
-  var results = [];
+  var elements = [];
   var match, elem;
 
   var finders = {
@@ -24,22 +24,22 @@ var $ = function( selector ) {
 
   if ( match = regEx.exec( selector ))  {
     if ( (elem = match[1]) ) {
-      results.push(document.getElementById( elem ));
+      elements.push(document.getElementById( elem ));
     } else if ( match[2] ) {
-      results = document.getElementsByTagName( selector );
+      elements = document.getElementsByTagName( selector );
     } else if ( (elem = match[3]) ) {
-      results = document.getElementsByClassName( elem );
+      elements = document.getElementsByClassName( elem );
     }
   } else {
     match = deeperMatch();
     var tags = document.getElementsByTagName(match[2][1]);
     for(i = 0; i < tags.length; i++){
       if(tags[i].id){  
-        results.push(tags[i]);
-        return results;
+        elements.push(tags[i]);
+        return elements;
       }
     }
   }
-  return results;
+  return elements;
 }
 
