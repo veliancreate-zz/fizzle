@@ -4,7 +4,6 @@ var $ = function( selector ) {
   // Your code here //
   ////////////////////
 
-
   //reg expressions taken from Sizzle in the JQuery source code.
   var elements = [];
   var regEx = /^(?:#([\w-]+)|(\w+)|\.([\w-]+))$/;
